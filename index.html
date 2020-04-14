@@ -240,16 +240,16 @@
                 <div class="projects-filter">
                     <div class="projects-filter-list wow fadeInUp">
                         <ul>
-                            <li> <a href="#" class="active" data-mixitup-control data-filter="all"> all </a> </li>
-                            <li> <a href="#" data-mixitup-control data-filter=".cat-1"> Project Type 1  </a> </li>
-                            <li> <a href="#" data-mixitup-control data-filter=".cat-2"> Project Type 2 </a> </li>
-                            <li> <a href="#" data-mixitup-control data-filter=".cat-3"> Project Type 3  </a> </li>
-                            <li> <a href="#" data-mixitup-control data-filter=".cat-4"> Project Type 4 </a> </li>
-                            <li> <a href="#" data-mixitup-control data-filter=".cat-5"> Project Type 5 </a> </li>
+                            <li> <button class="filter-1 active" data-filter="all"> all </button> </li>
+                            <li> <button class="filter-1" data-filter=".cat-1"> Project Type 1  </button> </li>
+                            <li> <button class="filter-1" data-filter=".cat-2"> Project Type 2 </button> </li>
+                            <li> <button class="filter-1" data-filter=".cat-3"> Project Type 3  </button> </li>
+                            <li> <button class="filter-1" data-filter=".cat-4"> Project Type 4 </button> </li>
+                            <li> <button class="filter-1" data-filter=".cat-5"> Project Type 5 </button> </li>
                         </ul> 
                     </div>
                     <div class="projects-filter-content wow fadeInUp">
-                        <div class="row">
+                        <div class="row filter-content filter-content-1">
                             <div class="col-12 col-sm-4 col-custom mix cat-1">
                                 <div class="project-box"> 
                                     <img src="images/project-1.jpg" alt="project image" class="img-fluid">
@@ -640,6 +640,28 @@
     <script src="plugins/mixitup/mixitup.min.js"></script>
     <script src="js/owl.js"></script>
     <script src="js/custom.js"></script>
+
+    <script> 
+        // Counter 
+        var a = 0;
+        $(window).scroll(function() {
+            var oTop = ($('.statistics').offset().top) - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+                $('.count').each(function () {
+                    $(this).prop('Counter',0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+                a = 1;
+            }
+        });
+    </script>
 
 </body>
 </html>

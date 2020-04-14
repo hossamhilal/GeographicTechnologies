@@ -1131,20 +1131,28 @@ button:focus {
     list-style: none;
 }
 
-.projects-filter-list a {
+.projects-filter-list button {
     font: bold 14px/25px regular;
     color: var(--textMedium);
     text-transform: capitalize;
     padding: 0 15px;
+    box-shadow: none;
+    background: transparent;
+    outline: 0;
+    border: 0;
     position: relative;
+    cursor: pointer;
 }
 
-.projects-filter-list a:hover,
+.projects-filter-list button:focus ,
+.projects-filter-list button:hover,
 .projects-filter-list .active {
     color: var(--mainColor);
+    box-shadow: none;
+    outline: 0;
 }
 
-.projects-filter-list a::after {
+.projects-filter-list button::after {
     content: "";
     height: 2px;
     width: 0;
@@ -1157,7 +1165,7 @@ button:focus {
     transition: all .5s ease-in-out;
 }
 
-.projects-filter-list a:hover::after,
+.projects-filter-list button:hover::after,
 .projects-filter-list .active::after {
     width: 100%;
     left: 0;
@@ -2495,7 +2503,7 @@ button:focus {
     justify-content: center;
 }
 
-.filter-theme2 a {
+.filter-theme2 button {
     background: var(--greyBg) 0% 0% no-repeat padding-box;
     border-radius: 5px;
     padding: 10px 25px;
@@ -2503,13 +2511,14 @@ button:focus {
     margin: 0 15px;
 }
 
-.filter-theme2 a:hover, 
+.filter-theme2 button:focus ,
+.filter-theme2 button:hover, 
 .filter-theme2 .active {
     background: var(--gradient-btn);
     color: var(--white);
 }
 
-.filter-theme2 a:hover::after, 
+.filter-theme2 button:hover::after, 
 .filter-theme2 .active::after {
     width:0;
 }
@@ -2520,6 +2529,10 @@ button:focus {
 
 .products-page .col-12 {
     padding: 15px;
+}
+
+.mix {
+    display: none;
 }
 
 @media screen and (max-width: 768px) {

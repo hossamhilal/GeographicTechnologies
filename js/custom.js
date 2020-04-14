@@ -61,38 +61,19 @@
         $(this).addClass('active');
     });
 
-    // Counter 
-    var a = 0;
-    $(window).scroll(function() {
-        var oTop = ($('.statistics').offset().top) - window.innerHeight;
-        if (a == 0 && $(window).scrollTop() > oTop) {
-            $('.count').each(function () {
-                $(this).prop('Counter',0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 4000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-            a = 1;
-        }
-    });
-
     
-    // // Tab List With Mixer 
-
+    // Tab List With Mixer 
     $('.filter-content').each(function(i) {
 		let parentSelector = '.filter-content-' + (i + 1)
 		let btnsSelector = '.filter-' + (i + 1)
         $(parentSelector).mixItUp({
-                selectors: {
-                    filter: btnsSelector
-                }
+            selectors: {
+                filter: btnsSelector,
+                target: '.col-12'
+            }
         });
-	});
+    });
+    
 
 
     
