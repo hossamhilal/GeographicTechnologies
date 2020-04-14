@@ -45,15 +45,15 @@
     new WOW().init();
     
     // MIX IT UP FILTER
-    var mixer = mixitup('.projects-filter-content', {
-        selectors: {
-            control: '[data-mixitup-control]',
-            target: '.col-12'
-        },
-        animation: {
-            duration: 400
-        }
-    });
+    // var mixer = mixitup('.projects-filter-content', {
+    //     selectors: {
+    //         control: '[data-mixitup-control]',
+    //         target: '.col-12'
+    //     },
+    //     animation: {
+    //         duration: 400
+    //     }
+    // });
 
     $('.projects-filter-list a').click(function(e){
         e.preventDefault();
@@ -83,49 +83,19 @@
 
     
     // // Tab List With Mixer 
-    // $('#filter-data-1').mixitup({
-    //     selectors: {
-    //       filter: '#filter-list-1' 
-    //     } 
-    // });
 
-    // $('#filter-data-2').mixitup({
-    //     selectors: {
-    //       filter: '#filter-list-2' 
-    //     } 
-    // });
+    $('.filter-content').each(function(i) {
+		let parentSelector = '.filter-content-' + (i + 1)
+		let btnsSelector = '.filter-' + (i + 1)
+        $(parentSelector).mixItUp({
+                selectors: {
+                    filter: btnsSelector
+                }
+        });
+	});
 
-    // $('#filter-data-3').mixitup({
-    //     selectors: {
-    //       filter: '#filter-list-3'
-    //     }
-    // });
 
-    // $('.tabs-list a').on('click', function (e) {
-	// 	var target = $(e.target).attr('href');
-
-	// 	if (target === '#tab-content-1') {
-	// 		if (!$('#filter-data-1').mixitup('isLoaded')) {
-	// 			$('#filter-data-1').mixitup({
-	// 				selectors: {
-	// 					filter: '#filter-data-1'
-	// 				}
-	// 			});
-	// 		} else if (!$('#filter-data-2').mixitup('isLoaded')) {
-	// 			$('#filter-data-2').mixitup({
-	// 				selectors: {
-	// 					filter: '#filter-data-2'
-	// 				}
-	// 			});
-    //         } else if (!$('#filter-data-3').mixitup('isLoaded')) {
-	// 			$('#filter-data-3').mixitup({
-	// 				selectors: {
-	// 					filter: '#filter-data-3'
-	// 				}
-	// 			});
-	// 		}
-	// 	}
-	// });
+    
   
 
     
