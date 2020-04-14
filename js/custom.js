@@ -29,7 +29,7 @@
         });
     }
 
-    // Clients Tabs 
+    // Tabs 
     $('.tabs-list a').click(function (e) {
         e.preventDefault();
 
@@ -47,6 +47,7 @@
     // MIX IT UP FILTER
     var mixer = mixitup('.projects-filter-content', {
         selectors: {
+            control: '[data-mixitup-control]',
             target: '.col-12'
         },
         animation: {
@@ -63,7 +64,7 @@
     // Counter 
     var a = 0;
     $(window).scroll(function() {
-        var oTop = $('.statistics').offset().top - window.innerHeight;
+        var oTop = ($('.statistics').offset().top) - window.innerHeight;
         if (a == 0 && $(window).scrollTop() > oTop) {
             $('.count').each(function () {
                 $(this).prop('Counter',0).animate({
@@ -79,6 +80,55 @@
             a = 1;
         }
     });
+
+    
+    // // Tab List With Mixer 
+    // $('#filter-data-1').mixitup({
+    //     selectors: {
+    //       filter: '#filter-list-1' 
+    //     } 
+    // });
+
+    // $('#filter-data-2').mixitup({
+    //     selectors: {
+    //       filter: '#filter-list-2' 
+    //     } 
+    // });
+
+    // $('#filter-data-3').mixitup({
+    //     selectors: {
+    //       filter: '#filter-list-3'
+    //     }
+    // });
+
+    // $('.tabs-list a').on('click', function (e) {
+	// 	var target = $(e.target).attr('href');
+
+	// 	if (target === '#tab-content-1') {
+	// 		if (!$('#filter-data-1').mixitup('isLoaded')) {
+	// 			$('#filter-data-1').mixitup({
+	// 				selectors: {
+	// 					filter: '#filter-data-1'
+	// 				}
+	// 			});
+	// 		} else if (!$('#filter-data-2').mixitup('isLoaded')) {
+	// 			$('#filter-data-2').mixitup({
+	// 				selectors: {
+	// 					filter: '#filter-data-2'
+	// 				}
+	// 			});
+    //         } else if (!$('#filter-data-3').mixitup('isLoaded')) {
+	// 			$('#filter-data-3').mixitup({
+	// 				selectors: {
+	// 					filter: '#filter-data-3'
+	// 				}
+	// 			});
+	// 		}
+	// 	}
+	// });
+  
+
+    
 
     
 
