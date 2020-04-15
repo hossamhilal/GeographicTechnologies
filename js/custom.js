@@ -43,18 +43,8 @@
 
     // iniat WOW Js
     new WOW().init();
-    
-    // MIX IT UP FILTER
-    // var mixer = mixitup('.projects-filter-content', {
-    //     selectors: {
-    //         control: '[data-mixitup-control]',
-    //         target: '.col-12'
-    //     },
-    //     animation: {
-    //         duration: 400
-    //     }
-    // });
 
+    // list active
     $('.projects-filter-list a').click(function(e){
         e.preventDefault();
         $('.projects-filter-list a').removeClass('active');
@@ -75,49 +65,21 @@
     });
     
 
-
-    
-  
-
-    
-
-    
-
-
     // INPUT FOCUS ANIMATION 
-    // $('.inputField .form-control').focus(function(){
-    //     $(this).parent('.inputField').addClass('focused');
-    // });
+    $('.field .form-control').focus(function(){
+        $(this).parent('.field').addClass('focused');
+    });
 
-    // $('.inputField .form-control').each(function() { 
-    //     if ($(this).val() != "") {
-    //         $(this).parent('.inputField').addClass('focused');   
-    //     }
-    // });
+    $('.field .form-control').each(function() { 
+        if ($(this).val() != "") {
+            $(this).parent('.field').addClass('focused');   
+        }
+    });
 
-    // $('.inputField .form-control').focusout(function(){
-    //     if($(this).val() === "")
-    //     $(this).parent('.inputField').removeClass('focused');
-    // });
-
-
-
-    // STOP DEFULT FOR MIXITUP FILTER ANCHOR  
-    // $('.portfolioFilterList a').click(function(e){
-    //     e.preventDefault();
-    //     $('.portfolioFilterList a').removeClass('active');
-    //     $(this).addClass('active');
-    // });
-
-    // // MIX IT UP FILTER 
-    // var mixer = mixitup('.portfolioFilterContent', {
-    //     selectors: {
-    //         target: '.col-12'
-    //     },
-    //     animation: {
-    //         duration: 400
-    //     }
-    // });
+    $('.field .form-control').focusout(function(){
+        if($(this).val() === "")
+        $(this).parent('.field').removeClass('focused');
+    });
 
    
 })(jQuery);

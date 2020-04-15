@@ -27,6 +27,7 @@
 
     /* backgrounds */
     --greyBg: #FCFCFC;
+    --greyDarkBg: #F6F6F6;
     --bgOpacity: rgba(34, 98, 184, 0.8);
 
     /* Borders */
@@ -318,7 +319,7 @@ textarea:active {
     z-index: 1;
 }
 
-.btn-white-outline:hover { 
+.btn-white-outline:hover {
     border-color: var(--mainColor);
 }
 
@@ -330,8 +331,8 @@ textarea:active {
     color: var(--white);
 }
 
-button:active ,
-button:hover ,
+button:active,
+button:hover,
 button:focus {
     box-shadow: none;
 }
@@ -1144,7 +1145,7 @@ button:focus {
     cursor: pointer;
 }
 
-.projects-filter-list button:focus ,
+.projects-filter-list button:focus,
 .projects-filter-list button:hover,
 .projects-filter-list .active {
     color: var(--mainColor);
@@ -1225,17 +1226,26 @@ button:focus {
     position: relative;
     z-index: 1;
     margin-bottom: 30px;
+    transform: translateY(-20px);
+    transition: all .3s ease-in-out;
 }
 
 .project-box-data .btn-white {
     width: 112px;
     height: 28px;
     z-index: 1;
+    transform: translateY(20px);
+    transition: all .3s ease-in-out;
 }
 
 .project-box:hover .project-box-data {
     opacity: 1;
     visibility: visible;
+}
+
+.project-box:hover .project-box-data h4,
+.project-box:hover .project-box-data .btn-white {
+    transform: translateY(0);
 }
 
 
@@ -1458,6 +1468,49 @@ button:focus {
 .client:hover {
     border: var(--borderBlue);
     box-shadow: var(--shadow);
+}
+
+.owl-cleient-hover {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: var(--bgOpacity);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.owl-cleient-hover a {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 10px;
+    transform: translateY(-15px);
+    transition: all .3s ease-in-out;
+}
+
+.owl-cleient-hover p {
+    font: normal 10px/20px regular;
+    color: var(--white);
+    transform: translateY(20px);
+    transition: all .3s ease-in-out;
+}
+
+.client:hover .owl-cleient-hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.client:hover .owl-cleient-hover a ,
+.client:hover .owl-cleient-hover p {
+    transform: translateY(0);
 }
 
 .clients .owl-nav {
@@ -2317,7 +2370,7 @@ button:focus {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    
+
     transition: all 1s ease-in-out;
 }
 
@@ -2327,13 +2380,13 @@ button:focus {
         justify-content: flex-start;
         margin-bottom: 40px;
     }
-    
+
     .tabs-list a {
         font: normal 13px/15px regular;
         padding: 7px 15px;
         margin: 0 5px;
     }
-    
+
     .clients-page .row {
         margin: -10px;
     }
@@ -2362,7 +2415,7 @@ button:focus {
         font-size: 11px;
     }
 
-    .btn-blue-full ,
+    .btn-blue-full,
     .btn-blue {
         padding: 5px 20px;
         min-width: 120px;
@@ -2410,7 +2463,7 @@ button:focus {
     font-family: bold;
 }
 
-.tabs-theme2 a:hover::after, 
+.tabs-theme2 a:hover::after,
 .tabs-theme2 .active::after {
     width: 100%;
     left: 0;
@@ -2422,7 +2475,7 @@ button:focus {
     margin: 0 auto 50px;
 }
 
-.products-compay .logo-box img{
+.products-compay .logo-box img {
     max-height: 170px;
     margin-bottom: 50px;
 }
@@ -2455,7 +2508,7 @@ button:focus {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -2489,7 +2542,7 @@ button:focus {
     box-shadow: var(--shadow);
 }
 
-.company-product:hover .company-product-hover{
+.company-product:hover .company-product-hover {
     transform: translateY(0%);
 }
 
@@ -2511,16 +2564,16 @@ button:focus {
     margin: 0 15px;
 }
 
-.filter-theme2 button:focus ,
-.filter-theme2 button:hover, 
+.filter-theme2 button:focus,
+.filter-theme2 button:hover,
 .filter-theme2 .active {
     background: var(--gradient-btn);
     color: var(--white);
 }
 
-.filter-theme2 button:hover::after, 
+.filter-theme2 button:hover::after,
 .filter-theme2 .active::after {
-    width:0;
+    width: 0;
 }
 
 .products-page .row {
@@ -2546,3 +2599,543 @@ button:focus {
 }
 
 
+/*==========================||---------------------------||========================*/
+/*==========================||         Product Page      ||========================*/
+/*==========================||---------------------------||========================*/
+
+.product-page-vector {
+    border-radius: 43px 0px;
+    overflow: hidden;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.product-page-data h2 {
+    font: Bold 25px/40px bold;
+    color: var(--mainColor);
+    border-left: var(--borderBlue);
+    border-left-width: 4px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.product-page-data h3 {
+    font: Bold 20px/40px bold;
+    color: var(--textGrey);
+}
+
+.product-page-data p {
+    font: normal 15px/40px regular;
+    color: var(--textGrey);
+}
+
+.product-page-data ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.product-page-data li {
+    position: relative;
+    font: normal 15px/40px regular;
+    color: var(--textGrey);
+    display: flex;
+    align-items: center;
+}
+
+.product-page-data li::before {
+    content: "";
+    width: 5px;
+    height: 2px;
+    background: var(--textLight);
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.product-page-details-box h2 {
+    font: Bold 20px/35px bold;
+    color: var(--textGrey);
+}
+
+.product-page-details-box ul {
+    padding-left: 18px;
+}
+
+.product-page-details-box li {
+    font: normal 15px/26px regular;
+    color: var(--textGrey);
+    margin-bottom: 8px;
+}
+
+.product-page-details-box p {
+    font: normal 15px/35px regular;
+    color: var(--textGrey);
+    margin-bottom: 20px;
+}
+
+.order-form-box {
+    border-top: var(--border);
+    border-width: 2px;
+}
+
+.order-form .form {
+    padding: 40px 55px;
+    border-radius: 0px 33px 33px 33px;
+    border: var(--border);
+}
+
+
+
+.field {
+    height: 50px;
+    border: 0;
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.field .form-control {
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+}
+
+.field label {
+    margin: 0;
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    font: normal 14px/15px regular;
+    color: var(--textMedium);
+    text-transform: capitalize;
+    transition: all .5s ease-in-out;
+}
+
+.field.textarea-field {
+    height: 150px;
+}
+
+.textarea-field textarea {
+    resize: none;
+}
+
+.focused label {
+    top: -21px;
+    left: 0;
+    color: var(--mainColor);
+}
+
+.focused {
+    border: var(--borderBlue);
+}
+
+@media screen and (max-width:768px) {
+    .product-page-data h2 {
+        font: Bold 18px/25px bold;
+    }
+
+    .product-page-data h3,
+    .product-page-details-box h2 {
+        font: Bold 13px/25px bold;
+    }
+
+    .product-page-data li,
+    .product-page-details-box li,
+    .product-page-details-box p {
+        font: normal 13px/25px regular;
+        margin: 0;
+    }
+
+    .mb-50 {
+        margin-bottom: 20px;
+    }
+
+    .order-form .form {
+        padding: 30px 15px;
+    }
+
+    .field {
+        height: 40px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+    }
+
+    .field .form-control {
+        border-radius: 5px;
+    }
+
+    .field label {
+        font: normal 11px/12px regular;
+        top: 14px;
+        left: 10px;
+    }
+
+    .focused label {
+        top: -17px;
+        left: 0;
+        color: var(--mainColor);
+    }
+}
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||         Project Page      ||========================*/
+/*==========================||---------------------------||========================*/
+
+.project-info {
+    background: var(--greyDarkBg) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    padding: 30px 20px;
+    height: 100%;
+}
+
+.project-compnay {
+    width: 70px;
+    height: 70px;
+    border: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.project-info h1 {
+    font: Bold 15px/30px bold;
+    color: var(--mainColor);
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    font: normal 15px/30px regular;
+    letter-spacing: 0px;
+    color: var(--textGrey);
+}
+
+.gallery-review-box {
+    height: 495px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.gallery-review .owl-stage {
+    display: flex;
+}
+
+.gallery-review .item {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+}
+
+.gallery-review .item img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-review .owl-nav {
+    position: absolute;
+    top: calc(50% - 25px);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gallery-review .owl-nav>div {
+    background: var(--bgOpacity);
+    width: 70px;
+    height: 50px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: all .5s ease-in-out;
+}
+
+.gallery-review .owl-nav>div:hover {
+    background: var(--mainColor);
+}
+
+.gallery-thumbs-box {
+    padding: 0 60px;
+}
+
+.gallery-thumbs .item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    margin: auto;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.gallery-thumbs .item img:hover {
+    box-shadow: var(--shadowGradient);
+}
+
+.gallery-thumbs .owl-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.gallery-thumbs .owl-nav>div {
+    background: var(--greyDarkBg) 0% 0% no-repeat padding-box;
+    width: 55px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+}
+
+.gallery-thumbs .owl-nav>div:hover {
+    background: var(--gradient-btn);
+    color: var(--white);
+}
+
+.gallery-thumbs .owl-prev {
+    right: -60px;
+}
+
+.gallery-thumbs .owl-next {
+    left: -60px;
+}
+
+.project-prop {
+    background: var(--greyDarkBg) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.project-prop:hover {
+    transform: translateY(-10px);
+    transition: all .5s ease-in-out;
+    box-shadow: var(--shadow);
+}
+
+.project-prop .icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-prop h2 {
+    font: Bold 19px/40px bold;
+    color: var(--textDark);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.project-prop p {
+    font: normal 15px/30px regular;
+    color: var(--textDark);
+    text-transform: lowercase;
+    min-height: 60px;
+}
+
+.owl-project-equipment .owl-stage {
+    display: flex;
+}
+
+.owl-project-equipment .item {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    padding: 2px;
+}
+
+.project-equipment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-equipments h1 {
+    font: Bold 20px/20px bold;
+    color: var(--mainColor);
+    text-transform: capitalize;
+    margin-bottom: 60px;
+}
+
+.project-equipment-pic {
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+    height: 230px;
+    padding: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-equipment h2 {
+    font: Bold 16px/30px bold;
+    color: var(--mainColor);
+    text-transform: capitalize;
+}
+
+.project-equipment p {
+    font: normal 12px/25px regular;
+}
+
+.project-equipment p:last-of-type {
+    margin-bottom: 10px;
+}
+
+.download {
+    font: Bold 15px/20px bold;
+    color: var(--textGrey);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.download img {
+    width: 30px;
+    margin: 0 15px;
+}
+
+.download:hover {
+    color: var(--mainColor);
+}
+
+
+.owl-project-equipment .owl-nav {
+    margin: 40px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    position: relative;
+}
+
+.owl-project-equipment .owl-nav::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    height: 2px;
+    width: calc(100% - 140px);
+    border-bottom: var(--border);
+}
+
+.owl-project-equipment .owl-nav>div {
+    background: var(--textMedium) 0% 0% no-repeat padding-box;
+    color: var(--white);
+    font-size: 25px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+}
+
+.owl-project-equipment .owl-nav>div:hover {
+    background: var(--mainColor);
+}
+
+.project-map-box {
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.project-map-box img {
+    max-height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .gallery-review-box {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .gallery-review .owl-nav {
+        top: calc(50% - 15px);
+    }
+
+    .gallery-review .owl-nav>div {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .gallery-thumbs-box {
+        padding: 0 40px;
+    }
+    
+    .gallery-thumbs .item img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .gallery-thumbs .owl-nav>div {
+        width: 40px;
+        height: 50px;
+    }
+    
+    .gallery-thumbs .owl-prev {
+        right: -40px;
+    }
+    
+    .gallery-thumbs .owl-next {
+        left: -40px;
+    }
+    
+    .project-info h1 {
+        font: Bold 12px/23px bold;
+    }
+    
+    .project-info p {
+        font: normal 12px/20px regular;
+    }
+    
+    .project-prop {
+        height: auto;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .project-prop h2 {
+        font: Bold 12px/18px bold;
+    }
+    
+    .project-prop p {
+        font: normal 12px/20px regular;
+    }
+    
+    .project-equipments h1 {
+        font: Bold 17px/30px bold;
+        margin-bottom: 30px;
+    }
+    
+    .owl-project-equipment .owl-nav>div {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .project-map-box {
+        height: 170px;
+    }
+}
