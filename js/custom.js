@@ -2,6 +2,13 @@
 (function($) {
     "use strict";
 
+    // Loader
+    $(window).on('load', function () {
+        $('.loader').fadeOut(500, function () {
+            $(this).remove();
+        });      
+    });
+
     // OPEN SIDE  MENU 
     $('.menu-btn').on('click', function(){
         $('.nav-menu ').toggleClass('show');

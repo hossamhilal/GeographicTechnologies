@@ -337,6 +337,44 @@ button:focus {
     box-shadow: none;
 }
 
+
+/*==========================||---------------------------||========================*/
+/*==========================||           Loader          ||========================*/
+/*==========================||---------------------------||========================*/
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: var(--greyBg);
+}
+
+.loader-svg {
+    height: 180px;
+    width: 180px;
+}
+
+.loader-box {
+    position: relative;
+}
+
+.loader-icon {
+    position: absolute;
+    top: calc( 50% - 35px );
+    left: calc( 50% - 35px );
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*==========================||---------------------------||========================*/
 /*==========================||           HEADER          ||========================*/
 /*==========================||---------------------------||========================*/
