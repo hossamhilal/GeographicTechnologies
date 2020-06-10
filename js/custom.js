@@ -2,6 +2,13 @@
 (function($) {
     "use strict";
 
+    // Loader
+    $(window).on('load', function () {
+        $('.loader').fadeOut(500, function () {
+            $(this).remove();
+        });      
+    });
+
     // OPEN SIDE  MENU 
     $('.menu-btn').on('click', function(){
         $('.nav-menu ').toggleClass('show');
@@ -50,8 +57,7 @@
         $('.projects-filter-list a').removeClass('active');
         $(this).addClass('active');
     });
-
-    
+  
     // Tab List With Mixer 
     $('.filter-content').each(function(i) {
 		let parentSelector = '.filter-content-' + (i + 1)
@@ -63,7 +69,6 @@
             }
         });
     });
-    
 
     // INPUT FOCUS ANIMATION 
     $('.field .form-control').focus(function(){
